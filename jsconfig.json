@@ -1,0 +1,6 @@
+{
+  "include": [
+    "/home/jaandrle/.nvm/versions/node/v18.12.1/lib/node_modules/nodejsscript/index.d.ts",
+    "index.js"
+  ]
+}
