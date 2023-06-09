@@ -26,7 +26,7 @@ $.api("", true)
 }){
 	if(!token) $.error(`Can't access YT API without a token, please use the '--token' option or enviroment variable '${env_names.youtube.token}'.`);
 	key= token;
-	
+
 	const playlist= await fetchPlaylist(id);
 	const data= s.cat(data_file).xargs(JSON.parse);
 	const { id: limitID }= data[0] || {};
@@ -39,6 +39,12 @@ $.api("", true)
 	}
 	echo("Done");
 	s.echo(JSON.stringify(data_tmp.concat(data), null, "\t")).to(data_file);
+	if(s.run`git diff --numstat`.trim()){
+		echo("test");
+		s.run`git add ${data_file}`;
+		s.run`git commit -m "Updated '${data_file}'"`;
+		s.run`git pushall`;
+	}
 	$.exit(0);
 })
 .parse();
