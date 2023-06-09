@@ -31,7 +31,7 @@ $.api("", true)
 	const data= s.cat(data_file).xargs(JSON.parse);
 	const { id: limitID }= data[0] || {};
 	const data_tmp= [];
-	const todo= ()=> playlist.length-data.length-data_tmp.length;
+	const todo= ()=> playlist.length + 5 - data.length - data_tmp.length;
 	for await (const video of fetchVideos(playlist)) {
 		echo.use("-R", "Todo: "+todo());
 		if(limitID===video.id) break;
