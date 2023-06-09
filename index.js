@@ -1,6 +1,6 @@
-#!/usr/bin/env nodejsscript
+#!/usr/bin/env -S npx nodejsscript
 /* jshint esversion: 11,-W097, -W040, module: true, node: true, expr: true, undef: true *//* global echo, $, pipe, s, fetch, cyclicLoop */
-import { env_names } from "./constants.mjs";
+import { env_names } from "./constants.js";
 const pipeAction= pipe.bind(null, function argsValidate(args){
 	args.index= Number(Object.hasOwn(args, "index") ? args.index : 0) - 1;
 	return args;

@@ -2,6 +2,7 @@
   "name": "zvedatori",
   "version": "0.1.0",
   "description": "Neoficiální upozoňovač na díly Zvědátorů",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

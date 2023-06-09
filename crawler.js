@@ -1,10 +1,10 @@
-#!/usr/bin/env nodejsscript
+#!/usr/bin/env -S npx nodejsscript
 /* jshint esversion: 11,-W097, -W040, module: true, node: true, expr: true, undef: true *//* global echo, $, pipe, s, fetch, cyclicLoop */
 const id= "UCjCUIQbZi3JSfANE6tyCCog";
 let key= "";
 const url_api= "https://youtube.googleapis.com/youtube/v3/";
 const options_fetch= { headers: { Accept: "application/json" }, compress: true };
-import { env_names, data_file } from "./constants.mjs";
+import { env_names, data_file } from "./constants.js";
 /**
  * ID a počet videí v playlistu
  * @typedef Playlist
