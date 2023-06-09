@@ -37,14 +37,17 @@ $.api("", true)
 		if(limitID===video.id) break;
 		data_tmp.push(video);
 	}
-	echo("Done");
+	echo("Videos collected");
 	s.echo(JSON.stringify(data_tmp.concat(data), null, "\t")).to(data_file);
 	if(s.run`git diff --numstat`.trim()){
-		echo("test");
+		echo("Diff to save");
 		s.run`git add ${data_file}`;
 		s.run`git commit -m "Updated '${data_file}'"`;
 		s.run`git pushall`;
+	} else {
+		echo("Nothig todo");
 	}
+	echo("Done");
 	$.exit(0);
 })
 .parse();
