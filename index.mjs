@@ -1,8 +1,6 @@
 #!/usr/bin/env nodejsscript
 /* jshint esversion: 11,-W097, -W040, module: true, node: true, expr: true, undef: true *//* global echo, $, pipe, s, fetch, cyclicLoop */
-const url_watch= "https://www.youtube.com/watch?v=";
-import { env_names, emoji, data_file } from "./constants.mjs";
-
+import { env_names } from "./constants.mjs";
 const pipeAction= pipe.bind(null, function argsValidate(args){
 	args.index= Number(Object.hasOwn(args, "index") ? args.index : 0) - 1;
 	return args;
@@ -45,8 +43,9 @@ async function post(d){
 	echo(d);
 	return { json(){ return "TBD" } };
 }
+import { emoji } from "./constants.mjs";
 function compose({ date, title, description, id }){
-	const url= url_watch+id;
+	const url= "https://www.youtube.com/watch?v="+id;
 	title= emoji[randomNumber(1, emoji.length)-1] + " " + title;
 	const d= new Date(date);
 	if(dateTo(d, "short")!==dateTo(new Date(), "short"))
@@ -73,6 +72,7 @@ function compose({ date, title, description, id }){
 		return out.join("\n");
 	}
 }
+import { data_file } from "./constants.mjs";
 function chooseVideo(index){
 	const data= s.cat(data_file).xargs(JSON.parse);
 	const { length }= data;
