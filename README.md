@@ -9,7 +9,7 @@ souboru pro jejich automatizované spouštění.
 
 1. [`crawler.js`](./crawler.js) – pomocí [YouTube Data API](https://developers.google.com/youtube/v3)
 	přidá nová videa do souboru [`data.json`](./data.json)
-1. `index.js` – ze souboru [`data.json`](./data.json) vybere požadovaný příspěvek
+1. [`index.js`](./index.js) – ze souboru [`data.json`](./data.json) vybere požadovaný příspěvek
 	a vypíše jej v užicatelsky přívětivém formátu. S argumentem
 	`mastodon` konkrétně vybere dnešní a náhodně jeden starší
 	a pošlejej na Mastodontí účet
