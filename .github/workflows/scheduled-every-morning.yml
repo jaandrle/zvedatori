@@ -16,9 +16,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: |
-        npx nodejsscript notifications.js mastodon --old 24 &&
         npx nodejsscript crawler.js &&
-        npx nodejsscript index.js mastodon
+        npx nodejsscript index.js mastodon &&
+        npx nodejsscript notifications.js mastodon --old 24
       env:
         YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
         MASTODON_URL: https://mastodonczech.cz/

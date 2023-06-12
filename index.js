@@ -36,7 +36,7 @@ $.api("zvedatori")
 			echo(res);
 		}
 		const status= compose(chooseVideo(-6*4));
-		res= await post({ url, token, status });
+		const res= await post({ url, token, status });
 		echo(res);
 		$.exit(0);
 	}))
