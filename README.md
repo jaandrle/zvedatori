@@ -22,6 +22,7 @@ souboru pro jejich automatizované spouštění.
 
 ## TODO
 - [ ] [podcasty/audio verze](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWZ0dThrdHd1RGFoZlpnVUluSW5PbVlCaF9fZ3xBQ3Jtc0tsdTF5eFhJTXZpNjdhMUJ4d0M0SzI2dU9FQjdTcW16eUV0MzRWaS1ETG83NmgwQjJIQ09JcHlPRWd2RXhYRmhnU2JXVm4xd2F5RjN1Q0NnME9DbWRlTEVyRTZ4ZzNlNFBLUXFzd1FBbHJyT21XU0FFMA&q=https%3A%2F%2Fanchor.fm%2Fzvedatori&v=6YqlMOh4_iQ)
+- [ ] v cronu ošetřit letní/zimní čas https://github.com/orgs/community/discussions/13454
 - [ ] páteční streamy + ošetřit (zkontrolovat ošetření) mimořádných událostí
 - [ ] zkontrolovat/ošetřit funkčnost komunity
 - [ ] vylepšit strukturu/dokumentaci projektu
