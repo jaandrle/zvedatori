@@ -30,7 +30,7 @@ $.api("zvedatori")
 		if(!token) $.error(`Can't post without a token, please use the '--token' option or enviroment variable '${env_names.mastodon.token}'.`);
 
 		const video_choosed= chooseVideo(0);
-		const getDate= date=> (new Date(date)).getDate();
+		const getDate= date=> (date ? new Date(date) : new Date()).getDate();
 		if(getDate() === getDate(video_choosed.date)){//daily ⇒ no need for proper check
 			const res= await post({ url, token, status: compose(video_choosed) });
 			echo(res);
