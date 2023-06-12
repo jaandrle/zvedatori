@@ -1,6 +1,7 @@
 #!/usr/bin/env -S npx nodejsscript
 /* jshint esversion: 11,-W097, -W040, module: true, node: true, expr: true, undef: true *//* global echo, $, pipe, s, fetch, cyclicLoop */
 import { env_names } from "./constants.js";
+import { post } from './mastodon.js';
 const pipeAction= pipe.bind(null, function argsValidate(args){
 	args.index= Number(Object.hasOwn(args, "index") ? args.index : 0) - 1;
 	return args;
@@ -28,22 +29,20 @@ $.api("zvedatori")
 		if(!url) $.error(`Can't post without a URL, please use the '--url' option or enviroment variable '${env_names.mastodon.url}'.`);
 		if(!token) $.error(`Can't post without a token, please use the '--token' option or enviroment variable '${env_names.mastodon.token}'.`);
 
-		const article= pipe (chooseVideo, compose);
-		let status= article(0);
-		let res= await post({ url, token, status }).then(res=> res.json());
-		echo(res);
-		status= article(-6*4);
-		res= await post({ url, token, status }).then(res=> res.json());
+		const video_choosed= chooseVideo(0);
+		const getDate= date=> (new Date(date)).getDate();
+		if(getDate() === getDate(video_choosed.date)){//daily ⇒ no need for proper check
+			const res= await post({ url, token, status: compose(video_choosed) });
+			echo(res);
+		}
+		const status= compose(chooseVideo(-6*4));
+		res= await post({ url, token, status });
 		echo(res);
 		$.exit(0);
 	}))
 .parse();
 
-async function post(d){
-	echo(d);
-	return { json(){ return "TBD" } };
-}
-import { emoji } from "./constants.mjs";
+import { emoji } from "./constants.js";
 function compose({ date, title, description, id }){
 	const url= "https://www.youtube.com/watch?v="+id;
 	title= emoji[randomNumber(1, emoji.length)-1] + " " + title;
@@ -72,7 +71,7 @@ function compose({ date, title, description, id }){
 		return out.join("\n");
 	}
 }
-import { data_file } from "./constants.mjs";
+import { data_file } from "./constants.js";
 function chooseVideo(index){
 	const data= s.cat(data_file).xargs(JSON.parse);
 	const { length }= data;

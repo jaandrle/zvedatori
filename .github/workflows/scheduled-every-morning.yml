@@ -15,6 +15,10 @@ jobs:
         node-version: lts/*
         cache: 'npm'
     - run: npm ci
+    - run: npx nodejsscript notifications.js mastodon --old 24
     - run: npx nodejsscript crawler.js
+    - run: npx nodejsscript index.js mastodon
       env:
         YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+        MASTODON_URL: ${{ secrets.MASTODON_URL }}
+        MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}

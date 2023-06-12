@@ -44,7 +44,7 @@ $.api("", true)
 		s.run`git config --global user.email ${"zc.murtnec@naj.elrdna".split("").reverse().join("")}`;
 		s.run`git config --global user.name "Jan Andrle (bot)"`;
 		s.run`git add ${data_file}`;
-		s.run`git commit -m "Updated ${data_file}"`;
+		s.run`git commit -m "Updated ${data_file} by bot"`;
 		s.run`git push`;
 	} else {
 		echo("Nothig todo");
