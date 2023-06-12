@@ -9,16 +9,17 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+    - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
       with:
         node-version: lts/*
         cache: 'npm'
     - run: npm ci
-    - run: npx nodejsscript notifications.js mastodon --old 24
-    - run: npx nodejsscript crawler.js
-    - run: npx nodejsscript index.js mastodon
+    - run: |
+        npx nodejsscript notifications.js mastodon --old 24 &&
+        npx nodejsscript crawler.js &&
+        npx nodejsscript index.js mastodon
       env:
         YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
-        MASTODON_URL: ${{ secrets.MASTODON_URL }}
+        MASTODON_URL: https://mastodonczech.cz/
         MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
