@@ -31,7 +31,7 @@ $.api("", true)
 	const data= s.cat(data_file).xargs(JSON.parse);
 	const { id: limitID }= data[0] || {};
 	const data_tmp= [];
-	const todo= ()=> playlist.length + 5 - data.length - data_tmp.length;
+	const todo= ()=> playlist.length - data.length - data_tmp.length;
 	for await (const video of fetchVideos(playlist)) {
 		echo.use("-R", "Todo: "+todo());
 		if(limitID===video.id) break;
@@ -41,6 +41,8 @@ $.api("", true)
 	s.echo(JSON.stringify(data_tmp.concat(data), null, "\t")).to(data_file);
 	if(s.run`git diff --numstat`.trim()){
 		echo("Diff to save");
+		s.run`git config --global user.email ${"zc.murtnec@naj.elrdna".split("").reverse().join("")}`;
+		s.run`git config --global user.name "Jan Andrle (bot)"`;
 		s.run`git add ${data_file}`;
 		s.run`git commit -m "Updated '${data_file}'"`;
 		s.run`git pushall`;
@@ -109,7 +111,7 @@ function fetchPlaylist(id_channel){
 			},
 			({ items: [ { statistics, contentDetails } ] })=> ({
 				id: contentDetails.relatedPlaylists.uploads,
-				length: Number(statistics.videoCount)
+				length: Number(statistics.videoCount) + 4 //some videos are not reported (hidden?)
 			})
 		));
 }
