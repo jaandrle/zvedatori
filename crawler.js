@@ -4,7 +4,7 @@ const id= "UCjCUIQbZi3JSfANE6tyCCog";
 let key= "";
 const url_api= "https://youtube.googleapis.com/youtube/v3/";
 const options_fetch= { headers: { Accept: "application/json" }, compress: true };
-import { env_names, data_file } from "./constants.js";
+import { env_names, data_file, gitCommit } from "./common.js";
 /**
  * ID a počet videí v playlistu
  * @typedef Playlist
@@ -39,16 +39,7 @@ $.api("", true)
 	}
 	echo("Videos collected");
 	s.echo(JSON.stringify(data_tmp.concat(data), null, "\t")).to(data_file);
-	if(s.run`git diff --numstat`.trim()){
-		echo("Diff to save");
-		s.run`git config --global user.email ${"zc.murtnec@naj.elrdna".split("").reverse().join("")}`;
-		s.run`git config --global user.name "Jan Andrle (bot)"`;
-		s.run`git add ${data_file}`;
-		s.run`git commit -m "Updated ${data_file} by bot"`;
-		s.run`git push`;
-	} else {
-		echo("Nothig todo");
-	}
+	gitCommit(data_file, "crawler");
 	echo("Done");
 	$.exit(0);
 })

@@ -1,6 +1,6 @@
 #!/usr/bin/env -S npx nodejsscript
 /* jshint esversion: 11,-W097, -W040, module: true, node: true, expr: true, undef: true *//* global echo, $, pipe, s, fetch, cyclicLoop */
-import { env_names } from "./constants.js";
+import { env_names } from "./common.js";
 import { post } from './mastodon.js';
 const pipeAction= pipe.bind(null, function argsValidate(args){
 	args.index= Number(Object.hasOwn(args, "index") ? args.index : 0) - 1;
@@ -42,7 +42,7 @@ $.api("zvedatori")
 	}))
 .parse();
 
-import { emoji } from "./constants.js";
+import { emoji } from "./common.js";
 function compose({ date, title, description, id }){
 	const url= "https://www.youtube.com/watch?v="+id;
 	title= emoji[randomNumber(1, emoji.length)-1] + " " + title;
@@ -71,7 +71,7 @@ function compose({ date, title, description, id }){
 		return out.join("\n");
 	}
 }
-import { data_file } from "./constants.js";
+import { data_file } from "./common.js";
 function chooseVideo(index){
 	const data= s.cat(data_file).xargs(JSON.parse);
 	const { length }= data;
