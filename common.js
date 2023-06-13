@@ -31,7 +31,7 @@ export const emoji= [
 export function gitCommit(file, des= "not specified"){
 	if(s.run`git diff --numstat`.trim()){
 		echo("Diff to save");
-		s.run`git config --global user.email "42103905+github-actions[bot]@users.noreply.github.com"}`;
+		s.run`git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"}`;
 		s.run`git config --global user.name "github-actions[bot]"`;
 		s.run`git add ${file}`;
 		s.run`git commit -m "Updated ${file} by bot – ${des}"`;
