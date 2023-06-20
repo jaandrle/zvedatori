@@ -9,7 +9,8 @@
 			"https://www.huffpost.com/entry/scatomancer_n_4309974",
 			"http://www.actforlibraries.org/the-history-and-practice-of-anthropomancy/"
 		],
-		"date": "2023-06-20T03:00:16Z"
+		"date": "2023-06-20T03:00:16Z",
+		"audio": false
 	},
 	{
 		"id": "79vmBtnqoj4",
@@ -19,13 +20,15 @@
 			"https://www.nature.com/articles/s41467-020-20043-0",
 			"https://journals.sagepub.com/doi/epub/10.1177/07439156221103852"
 		],
-		"date": "2023-06-19T03:00:01Z"
+		"date": "2023-06-19T03:00:01Z",
+		"audio": false
 	},
 	{
 		"id": "ZtLYCT_d3pw",
 		"title": "Americký sen - Zpátky mimo téma #258",
 		"description": [],
-		"date": "2023-06-16T19:11:55Z"
+		"date": "2023-06-16T19:11:55Z",
+		"audio": false
 	},
 	{
 		"id": "27-RSEUCfyA",
@@ -35,7 +38,8 @@
 			"https://www.sciencedaily.com/releases/2023/05/230511164436.htm",
 			"https://psycnet.apa.org/doiLanding?doi=10.1037%2Fpspi0000425"
 		],
-		"date": "2023-06-16T03:00:00Z"
+		"date": "2023-06-16T03:00:00Z",
+		"audio": false
 	},
 	{
 		"id": "ss2CZsLCBto",
@@ -47,7 +51,8 @@
 			"https://www.express.co.uk/news/world/565315/Scientists-at-Large-Hadron-Collider-hope-to-make-contact-with-PARALLEL-UNIVERSE-in-days",
 			"https://phys.org/news/2015-03-mini-black-holes-lhc-parallel.html"
 		],
-		"date": "2023-06-15T03:00:20Z"
+		"date": "2023-06-15T03:00:20Z",
+		"audio": false
 	},
 	{
 		"id": "qXb37WXb07Y",
@@ -56,7 +61,8 @@
 			"Zdroje/Inspirováno:",
 			"https://www.irozhlas.cz/neduvera"
 		],
-		"date": "2023-06-14T03:00:32Z"
+		"date": "2023-06-14T03:00:32Z",
+		"audio": false
 	},
 	{
 		"id": "95NnG24KSY0",
@@ -66,7 +72,7 @@
 			"https://www.researchgate.net/publication/276042424_'Snapewives'_and_'Snapeism'_A_Fiction-Based_Religion_within_the_Harry_Potter_Fandom/link/55f5b94808ae7a10cf8b725b/download"
 		],
 		"date": "2023-06-13T03:00:03Z",
-		"audio": false
+		"audio": "Snapeismus-Je-to-prav-nboenstv----Pro-to-eme--1657---13--6--2023-e25stts"
 	},
 	{
 		"id": "6YqlMOh4_iQ",
@@ -78,14 +84,14 @@
 			"https://www.lesswrong.com/posts/uMQ3cqWDPHhjtiesc/agi-ruin-a-list-of-lethalities"
 		],
 		"date": "2023-06-12T03:00:06Z",
-		"audio": false
+		"audio": "Nejvt-hrozby-uml-inteligence---Pro-to-eme--1656---12--6--2023-e25stsg"
 	},
 	{
 		"id": "ASm8SHhq8wg",
 		"title": "Jak si zničit reputaci? - Zpátky mimo téma #257",
 		"description": [],
 		"date": "2023-06-09T16:01:25Z",
-		"audio": "Jak-si-zniit-reputaci----Zptky-mimo-tma-257---9--6--2023-e25jdnm"
+		"audio": false
 	},
 	{
 		"id": "UsTeMabGA48",
@@ -96,7 +102,7 @@
 			"https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/2021SW002749"
 		],
 		"date": "2023-06-09T03:00:16Z",
-		"audio": false
+		"audio": "Ochrn-ns-alobal-pi-cestch-na-Mars----Pro-to-eme--1655---9--6--2023-e25jduo"
 	},
 	{
 		"id": "uQ8SjJoqoiU",
@@ -108,7 +114,7 @@
 			"https://breakthroughindia.org/wp-content/uploads/2023/04/Darwin-press-release.pdf"
 		],
 		"date": "2023-06-08T03:00:21Z",
-		"audio": false
+		"audio": "V-Indii-kon-vuka-nejen-evoluce----Pro-to-eme--1654---8--6--2023-e25jdt1"
 	},
 	{
 		"id": "o54d-CBVJTg",
@@ -119,7 +125,7 @@
 			"https://www.skeptic.org.uk/2020/11/french-scientist-didier-raoult-given-rusty-razor-award-for-pseudoscience/"
 		],
 		"date": "2023-06-07T03:00:20Z",
-		"audio": false
+		"audio": "Vyplat-se-bt-ve-vd-rebel----Pro-to-eme--1653---7--6--2023-e25jdqk"
 	},
 	{
 		"id": "36PY-HCkYlk",
@@ -10985,7 +10991,7 @@
 			"http://www.bigear.org/vol1no1/burnell.htm"
 		],
 		"date": "2020-04-16T03:00:08Z",
-		"audio": false
+		"audio": "Ob-teleskop-na-odvrcen-stran-Msce---Pro-to-eme--834---16--4--2020-e25rv91"
 	},
 	{
 		"id": "_Pr_3zhUVpI",
@@ -10995,7 +11001,7 @@
 			"https://www.nature.com/articles/s41551-020-0534-9.epdf"
 		],
 		"date": "2020-04-15T03:00:11Z",
-		"audio": false
+		"audio": "Chtli-byste-chytr-zchod----Pro-to-eme--833---15--4--2020-e25rv5r"
 	},
 	{
 		"id": "_5tQwriNf1c",
@@ -11008,7 +11014,7 @@
 			"http://cz4.bacteoffnd.com/?c=cz"
 		],
 		"date": "2020-04-14T03:00:18Z",
-		"audio": false
+		"audio": "Zruen-ppravky-proti-parazitm---Pro-to-eme--832---14--4--2020-e25r15p"
 	},
 	{
 		"id": "BKN-bAAuYJQ",
