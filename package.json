@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/jaandrle/zvedatori#readme",
   "dependencies": {
-    "nodejsscript": "^0.9.3"
+    "nodejsscript": "github:jaandrle/nodejsscript#dev-v1"
   }
 }
