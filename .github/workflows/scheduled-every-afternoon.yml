@@ -7,7 +7,7 @@ on:
 
 env:
   TZ: "Europe/Prague"
-  LOCAL_HOUR: "18"
+  LOCAL_HOUR: "13"
 
 jobs:
   cron-local:
@@ -27,9 +27,10 @@ jobs:
         id: check_local_time
         run: |
           run=False
-          if [[ ${TRIGGER} != 'schedule' ]]; then
-            run=True
-          elif [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
+          # if [[ ${TRIGGER} != 'schedule' ]]; then
+          #   run=True
+          # el
+          if [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
             run=True
           fi
           echo "$run"
@@ -48,9 +49,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: |
-        if [ $(date --date='now' +%w) -eq '5' ]; then 
+        if [ $(date --date='now' +%w) -eq '3' ]; then 
           npx nodejsscript crawler.js &&
-          npx nodejsscript index.js mastodon
+          npx nodejsscript index.js text
         fi
         npx nodejsscript notifications.js mastodon --old 24
       env:
