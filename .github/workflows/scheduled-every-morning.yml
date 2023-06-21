@@ -1,13 +1,43 @@
-name: Collect videos
-
+name: Collect daily videos
+permissions: {}
 on:
   workflow_dispatch:
   schedule:
-  - cron: '0 6 * * *'
-    
+  - cron: '0 6,7 * * *'
+env:
+  TZ: "Europe/Prague"
+  LOCAL_HOUR: "08"
 jobs:
+  cron-local:
+    # Usage:
+    # 1) sets env:
+    #   env:
+    #     TZ: "Europe/Prague"
+    #     LOCAL_HOUR: "08"
+    # 2) in job
+    #    if: needs.cron-local.outputs.isRunTime == 'True'
+    #    needs: cron-local
+    runs-on: ubuntu-latest
+    outputs:
+      isRunTime: ${{ steps.check_local_time.outputs.isRunTime }}
+    steps:
+      - name: Check local time
+        id: check_local_time
+        run: |
+          isRunTime=False
+          if [[ ${TRIGGER} != 'schedule' ]]; then
+            isRunTime=True
+          elif [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
+            isRunTime=True
+          fi
+          echo "$isRunTime"
+          echo "isRunTime=$isRunTime" >> "$GITHUB_OUTPUT"
+        env:
+          TRIGGER: ${{ github.event_name }}
   main:
     runs-on: ubuntu-latest
+    if: needs.cron-local.outputs.isRunTime == 'True'
+    needs: cron-local
     steps:
     - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
     - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
@@ -18,7 +48,6 @@ jobs:
     - run: |
         npx nodejsscript crawler.js &&
         npx nodejsscript index.js mastodon &&
-        npx nodejsscript notifications.js mastodon --old 24
       env:
         YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
         MASTODON_URL: https://mastodonczech.cz/

@@ -3,7 +3,10 @@
 import { data_file, gitCommit } from './common.js';
 const url_api= "https://anchor.fm/s/3d2c64f0/podcast/rss";
 
-if($.isMain(import.meta)){
+if($.isMain(import.meta))
+	main().then($.exit.bind(null, 0));
+
+export async function main(){
 	const { items }= await getItems(url_api);
 	pipe(
 		f=> s.cat(f).xargs(JSON.parse),
@@ -11,10 +14,8 @@ if($.isMain(import.meta)){
 		d=> JSON.stringify(d, null, "\t"),
 		d=> s.echo(d).to(data_file)
 	)(data_file);
-	gitCommit(data_file, "podcast");
-	$.exit(0);
+	return gitCommit(data_file, "podcast");
 }
-
 export async function getItems(url){
 	const rss= await fetch(url).then(res=> res.text());
 	if(!rss || typeof rss!=="string") return {};

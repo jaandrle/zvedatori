@@ -1,14 +1,12 @@
 name: Notifications
-
+permissions: {}
 on:
   workflow_dispatch:
   schedule:
   - cron: '0 16,17 * * *'
-
 env:
   TZ: "Europe/Prague"
-  LOCAL_HOUR: "13"
-
+  LOCAL_HOUR: "18"
 jobs:
   cron-local:
     # Usage:
@@ -17,29 +15,28 @@ jobs:
     #     TZ: "Europe/Prague"
     #     LOCAL_HOUR: "08"
     # 2) in job
-    #    if: needs.cron-local.outputs.run == 'True'
+    #    if: needs.cron-local.outputs.isRunTime == 'True'
     #    needs: cron-local
     runs-on: ubuntu-latest
     outputs:
-      run: ${{ steps.check_local_time.outputs.run }}
+      isRunTime: ${{ steps.check_local_time.outputs.isRunTime }}
     steps:
       - name: Check local time
         id: check_local_time
         run: |
-          run=False
-          # if [[ ${TRIGGER} != 'schedule' ]]; then
-          #   run=True
-          # el
-          if [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
-            run=True
+          isRunTime=False
+          if [[ ${TRIGGER} != 'schedule' ]]; then
+            isRunTime=True
+          elif [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
+            isRunTime=True
           fi
-          echo "$run"
-          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "$isRunTime"
+          echo "isRunTime=$isRunTime" >> "$GITHUB_OUTPUT"
         env:
           TRIGGER: ${{ github.event_name }}
   main:
     runs-on: ubuntu-latest
-    if: needs.cron-local.outputs.run == 'True'
+    if: needs.cron-local.outputs.isRunTime == 'True'
     needs: cron-local
     steps:
     - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
@@ -49,9 +46,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: |
-        if [ $(date --date='now' +%w) -eq '3' ]; then 
+        if [ $(date --date='now' +%w) -eq '5' ]; then 
           npx nodejsscript crawler.js &&
-          npx nodejsscript index.js text
+          npx nodejsscript index.js mastodon --only 'Zpátky mimo téma'
         fi
         npx nodejsscript notifications.js mastodon --old 24
       env:

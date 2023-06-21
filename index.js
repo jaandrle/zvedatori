@@ -7,7 +7,7 @@ const pipeAction= pipe.bind(null, function argsValidate(args){
 	return args;
 });
 $.api("zvedatori")
-.version("0.2.0")
+.version("0.3.0")
 .describe([
 	"Tento script pomáhá s vybráním Zvědátorských¹ videí v playlistu.",
 	"",
@@ -20,21 +20,32 @@ $.api("zvedatori")
 	.option("--index, -I", "Pořadí od posledního k nejstaršímu. Indexuje se od 1, `0` = vyber náhodně.")
 	.action(pipeAction(({ index })=> chooseVideo(index), compose, echo, $.exit.bind(null, 0)))
 .command("mastodon", "Post to mastodon")
+	.option("--only", "print last video only if name fits to given argument, also skip posting older")
 	.option("--url", "instance url (e.g.: `https://mstdn.social`) – required")
 	.option("--token", "a token for the mastodon account – required")
+	.example("mastodon --only 'Zpátky mimo téma'")
+	.example("mastodon --only 'Zpátky mimo téma' --url URL --token TOKEN")
+	.example("mastodon --url URL --token TOKEN")
+	.example("mastodon")
 	.action(pipeAction(async function mastodon({
 		url= $.env[env_names.mastodon.url],
-		token= $.env[env_names.mastodon.token]
+		token= $.env[env_names.mastodon.token],
+		only= false
 	}){
 		if(!url) $.error(`Can't post without a URL, please use the '--url' option or enviroment variable '${env_names.mastodon.url}'.`);
 		if(!token) $.error(`Can't post without a token, please use the '--token' option or enviroment variable '${env_names.mastodon.token}'.`);
 
 		const video_choosed= chooseVideo(0);
+		if(only && !video_choosed.title.includes(only))
+			return $.exit(0);
+		
 		const getDate= date=> (date ? new Date(date) : new Date()).getDate();
 		if(getDate() === getDate(video_choosed.date)){//daily ⇒ no need for proper check
 			const res= await post({ url, token, status: compose(video_choosed) });
 			echo(res);
 		}
+		if(only)
+			return $.exit(0);
 		const status= compose(chooseVideo(-6*4));
 		const res= await post({ url, token, status });
 		echo(res);
