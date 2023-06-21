@@ -24,8 +24,8 @@ jobs:
       run: ${{ steps.check_local_time.outputs.run }}
     steps:
       - name: Check local time
-      - id: check_local_time
-      - run: |
+        id: check_local_time
+        run: |
           if [[ ${TRIGGER} != 'schedule' ]]; then
             echo "run=True" >> "$GITHUB_OUTPUT"
             exit 0
