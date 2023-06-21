@@ -1,0 +1,60 @@
+name: Notifications
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 16,17 * * *'
+
+env:
+  TZ: "Europe/Prague"
+  LOCAL_HOUR: "18"
+
+jobs:
+  cron-local:
+    # Usage:
+    # 1) sets env:
+    #   env:
+    #     TZ: "Europe/Prague"
+    #     LOCAL_HOUR: "08"
+    # 2) in job
+    #    if: needs.cron-local.outputs.run == 'True'
+    #    needs: cron-local
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check_local_time.outputs.run }}
+    steps:
+      - name: Check local time
+      - id: check_local_time
+      - env:
+        TRIGGER: ${{ github.event_name }}
+      - run: |
+        if [[ ${TRIGGER} != 'schedule' ]]; then
+          echo "run=True" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        if [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
+          echo "run=True" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        echo "run=False" >> "$GITHUB_OUTPUT"
+  main:
+    runs-on: ubuntu-latest
+    if: needs.cron-local.outputs.run == 'True'
+    needs: cron-local
+    steps:
+    - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+    - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+      with:
+        node-version: lts/*
+        cache: 'npm'
+    - run: npm ci
+    - run: |
+        if [ $(date --date='now' +%w) -eq '5' ]; then 
+          npx nodejsscript crawler.js &&
+          npx nodejsscript index.js mastodon
+        fi
+        npx nodejsscript notifications.js mastodon --old 24
+      env:
+        YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+        MASTODON_URL: https://mastodonczech.cz/
+        MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
