@@ -25,8 +25,6 @@ jobs:
     steps:
       - name: Check local time
       - id: check_local_time
-      - env:
-        TRIGGER: ${{ github.event_name }}
       - run: |
           if [[ ${TRIGGER} != 'schedule' ]]; then
             echo "run=True" >> "$GITHUB_OUTPUT"
@@ -37,6 +35,8 @@ jobs:
             exit 0
           fi
           echo "run=False" >> "$GITHUB_OUTPUT"
+        env:
+          TRIGGER: ${{ github.event_name }}
   main:
     runs-on: ubuntu-latest
     if: needs.cron-local.outputs.run == 'True'
