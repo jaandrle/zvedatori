@@ -28,15 +28,15 @@ jobs:
       - env:
         TRIGGER: ${{ github.event_name }}
       - run: |
-        if [[ ${TRIGGER} != 'schedule' ]]; then
-          echo "run=True" >> "$GITHUB_OUTPUT"
-          exit 0
-        fi
-        if [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
-          echo "run=True" >> "$GITHUB_OUTPUT"
-          exit 0
-        fi
-        echo "run=False" >> "$GITHUB_OUTPUT"
+          if [[ ${TRIGGER} != 'schedule' ]]; then
+            echo "run=True" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ $(date --date='now' +%H) -eq $LOCAL_HOUR ]; then 
+            echo "run=True" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "run=False" >> "$GITHUB_OUTPUT"
   main:
     runs-on: ubuntu-latest
     if: needs.cron-local.outputs.run == 'True'
