@@ -31,9 +31,12 @@ export const emoji= [
 export function gitCommit(file, des= "not specified"){
 	if(s.run`git diff --numstat`.trim()){
 		echo("Diff to save");
+		s.run`git config user.name "Bot"`
+		s.run`git config user.email "${"zc.murtnec@naj.elrdna".split("").reverse().join("")}"`
 		s.run`git add ${file}`;
-		s.run`git commit --author="Bot <andrle.jan@centrum.cz>" -m "Updated ${file} by bot – ${des}"`;
+		s.run`git commit -m "Updated ${file} by bot – ${des}"`;
 		s.run`git push`;
+		s.run`git config --remove-section user`
 	} else {
 		echo("Nothig todo");
 	}
