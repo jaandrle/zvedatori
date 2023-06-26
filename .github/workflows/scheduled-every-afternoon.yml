@@ -3,10 +3,10 @@ permissions: {}
 on:
   workflow_dispatch:
   schedule:
-  - cron: '0 16,17 * * *'
+  - cron: '53 15,16 * * *'
 env:
   TZ: "Europe/Prague"
-  LOCAL_HOUR: "18"
+  LOCAL_HOUR: "17"
 jobs:
   cron-local:
     # Usage:
