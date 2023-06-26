@@ -3,11 +3,17 @@
 import { env_names } from "./common.js";
 import { post } from './mastodon.js';
 const pipeAction= pipe.bind(null, function argsValidate(args){
+	const index_index= $.findIndex(a=> [ "--index", "-I" ].includes(a));
+	if(index_index !== -1){
+		const candidate= $[index_index+1];
+		if(/-\d+/.test(candidate))
+			args.index= candidate;
+	}
 	args.index= Number(Object.hasOwn(args, "index") ? args.index : 0) - 1;
 	return args;
 });
 $.api("zvedatori")
-.version("0.3.0")
+.version("0.4.0")
 .describe([
 	"Tento script pomáhá s vybráním Zvědátorských¹ videí v playlistu.",
 	"",
