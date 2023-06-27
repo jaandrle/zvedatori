@@ -1,5 +1,4 @@
 name: Notifications
-permissions: {}
 on:
   workflow_dispatch:
   schedule:

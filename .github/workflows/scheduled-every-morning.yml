@@ -1,5 +1,4 @@
 name: Collect daily videos
-permissions: {}
 on:
   workflow_dispatch:
   schedule:
