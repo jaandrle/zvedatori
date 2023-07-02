@@ -17,8 +17,12 @@ souboru pro jejich automatizované spouštění.
 	zapsané notifikace. Pokud voláno s argumentem `mastodon` (a `--old`),
 	příspěvky mladší než zadaný limit přepošle na Mastodontí účet
 1. [`.github/workflows/scheduled-every-morning.yml`](./.github/workflows/scheduled-every-morning.yml) – konfigurační soubor
-	pro [GitHub Action](https://docs.github.com/en/actions), který spustí předchozí
-	utility cronem v 6 hodin GMT.
+	pro [GitHub Action](https://docs.github.com/en/actions), který spustí `crawler` a `index`
+	utility cronem v ~8:00 hodin CET/CEST.
+1. [`.github/workflows/scheduled-every-afternoon.yml`](./.github/workflows/scheduled-every-afternoon.yml) – konfigurační soubor
+	pro [GitHub Action](https://docs.github.com/en/actions), který spustí `notifications`
+	utilitu cronem v ~17:53 hodin CET/CEST. A pátek navíc znovu zavolá `crawler` a `index` s parametrem pro
+	publikování jen pokud páteční stream.
 
 ## TODO
 - [ ] [podcasty/audio verze](https://podcasters.spotify.com/pod/show/zvedatori)
