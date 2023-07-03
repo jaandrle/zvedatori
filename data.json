@@ -9,13 +9,15 @@
 			"https://www.bbc.co.uk/iplayer/episode/m001jw0s/the-pig-butchering-romance-scam",
 			"https://www.paypal.com/ca/for-you/account/security/fraud-dangers#:%7E:text=Any%20email%20from%20PayPal%20will,bank%20account%2C%20or%20credit%20card."
 		],
-		"date": "2023-07-03T03:00:02Z"
+		"date": "2023-07-03T03:00:02Z",
+		"audio": false
 	},
 	{
 		"id": "X4zQ4YHchIU",
 		"title": "Víme toho moc! - Zpátky mimo téma #260",
 		"description": [],
-		"date": "2023-06-30T15:52:57Z"
+		"date": "2023-07-01T00:42:16Z",
+		"audio": "Vme-toho-moc----Zptky-mimo-tma-260---30--6--2023-e26fec7"
 	},
 	{
 		"id": "88NO6FD2sJ8",
@@ -26,7 +28,8 @@
 			"https://en.wikipedia.org/wiki/Federated_learning",
 			"https://ieee-ccaa.com/speakers-list/dr-larissa-suzuki/"
 		],
-		"date": "2023-06-30T03:00:05Z"
+		"date": "2023-06-30T03:00:05Z",
+		"audio": false
 	},
 	{
 		"id": "O6vNQXgnwoA",
@@ -35,7 +38,8 @@
 			"Zdroje/Inspirováno:",
 			"https://www.dni.gov/files/ODNI/documents/assessments/Report-on-Potential-Links-Between-the-Wuhan-Institute-of-Virology-and-the-Origins-of-COVID-19-20230623.pdf"
 		],
-		"date": "2023-06-29T03:00:17Z"
+		"date": "2023-06-29T03:00:17Z",
+		"audio": false
 	},
 	{
 		"id": "Lf3jaaIteck",
@@ -45,7 +49,8 @@
 			"https://twitter.com/CreepyOrg/status/1671159320682332161",
 			"https://www.pbs.org/newshour/world/airbnb-contest-winner-spends-halloween-night-paris-catacombs#:~:text=Brazilian%20Pedro%20Arruda%20had%20an,of%20roughly%206%20million%20people."
 		],
-		"date": "2023-06-28T03:00:19Z"
+		"date": "2023-06-28T03:00:19Z",
+		"audio": false
 	},
 	{
 		"id": "yPgLZ6A3nBc",
@@ -54,7 +59,8 @@
 			"Zdroje/Inspirováno:",
 			"https://journals.sagepub.com/doi/10.1177/13623613231173056#bibr18-13623613231173056"
 		],
-		"date": "2023-06-27T03:00:21Z"
+		"date": "2023-06-27T03:00:21Z",
+		"audio": false
 	},
 	{
 		"id": "V04eYiXjiEo",
@@ -66,13 +72,15 @@
 			"https://www.livescience.com/what-if-earth-stopped-spinning.html",
 			"https://books.google.cz/books?id=I3gvDwAAQBAJ&pg=PT359&lpg=PT359&dq=Daniel+Ellsberg+earth+stop+spinning&source=bl&ots=tvJgFDcnSl&sig=ACfU3U042CaTGCF7qnnlHivQb5Ro0-PwCw&hl=cs&sa=X&ved=2ahUKEwinz-D7ntH_AhUsg_0HHUsCDWYQ6AF6BAgtEAM#v=onepage&q=Daniel%20Ellsberg%20earth%20stop%20spinning&f=false"
 		],
-		"date": "2023-06-26T03:00:13Z"
+		"date": "2023-06-26T03:00:13Z",
+		"audio": "Americk-pln-na-zastaven-Zem---Pro-to-eme--1666---26--6--2023-e26fe0u"
 	},
 	{
 		"id": "6ziP941D37A",
 		"title": "Jak se dělá výzkum konspiračních teorií? (feat. Matouš Pilnáček) - Zpátky mimo téma #259",
 		"description": [],
-		"date": "2023-06-23T18:04:05Z"
+		"date": "2023-06-23T19:35:56Z",
+		"audio": false
 	},
 	{
 		"id": "vD7n5X0lAbU",
@@ -81,7 +89,8 @@
 			"Zdroje/Inspirováno:",
 			"https://www.theguardian.com/science/2023/jun/14/synthetic-human-embryos-created-in-groundbreaking-advance"
 		],
-		"date": "2023-06-23T03:00:22Z"
+		"date": "2023-06-23T03:00:22Z",
+		"audio": "Syntetick-embrya-lid-jsou-tu----Pro-to-eme--1665---23--6--2023-e2663jo"
 	},
 	{
 		"id": "XB6VQUZ8eas",
@@ -93,7 +102,8 @@
 			"https://www.nbcnews.com/news/us-news/great-boston-molasses-flood-1919-killed-21-after-2-million-n958326",
 			"https://www.theguardian.com/world/2013/sep/12/hawaii-honolulu-molasses-spill-fish-dying"
 		],
-		"date": "2023-06-22T03:00:11Z"
+		"date": "2023-06-22T03:00:11Z",
+		"audio": "Zplavy-dobrot--kter-zabjely---Pro-to-eme--1664---22--6--2023-e2663he"
 	},
 	{
 		"id": "FukfLSZ1PSo",
@@ -104,7 +114,8 @@
 			"https://pubmed.ncbi.nlm.nih.gov/11858868/",
 			"https://s3.amazonaws.com/media2.fairhealth.org/infographic/asset/Lyme%20Disease%20Infographic%20-%20Final.pdf"
 		],
-		"date": "2023-06-21T03:00:06Z"
+		"date": "2023-06-21T03:00:06Z",
+		"audio": "Pro-nemme-vakcnu-na-borelizu----Pro-to-eme--1663---21--6--2023-e2663ef"
 	},
 	{
 		"id": "d7QGGu8ZVuE",
@@ -117,18 +128,18 @@
 			"http://www.actforlibraries.org/the-history-and-practice-of-anthropomancy/"
 		],
 		"date": "2023-06-20T03:00:16Z",
-		"audio": false
+		"audio": "Jak-nechutn-pedpovdat-budoucnost----Pro-to-eme--1662---20--6--2023-e2663c4"
 	},
 	{
 		"id": "79vmBtnqoj4",
-		"title": "\"Nejdřív myslet, potom řvát!\" nedělají - Proč to řešíme? #1661",
+		"title": "\"Nejdřív myslet, potom řvát!\" není oblíbená strategie - Proč to řešíme? #1661",
 		"description": [
 			"Zdroje/Inspirováno:",
 			"https://www.nature.com/articles/s41467-020-20043-0",
 			"https://journals.sagepub.com/doi/epub/10.1177/07439156221103852"
 		],
 		"date": "2023-06-19T03:00:01Z",
-		"audio": false
+		"audio": "Nejdv-myslet--potom-vt--nen-oblben-strategie---Pro-to-eme--1661---19--6--2023-e26639p"
 	},
 	{
 		"id": "ZtLYCT_d3pw",
@@ -146,11 +157,11 @@
 			"https://psycnet.apa.org/doiLanding?doi=10.1037%2Fpspi0000425"
 		],
 		"date": "2023-06-16T03:00:00Z",
-		"audio": false
+		"audio": "Pro-nemme-rdi-ostatn-lidi----Pro-to-eme--1660---16--6--2023-e25su3p"
 	},
 	{
 		"id": "ss2CZsLCBto",
-		"title": "Hadronový urychlovač (ne)kontaktuje cizí vesmír! - Proč to řešíme? #1669",
+		"title": "Hadronový urychlovač (ne)kontaktuje cizí vesmír! - Proč to řešíme? #1659",
 		"description": [
 			"Zdroje/Inspirováno:",
 			"https://twitter.com/TheProjectUnity",
@@ -159,17 +170,17 @@
 			"https://phys.org/news/2015-03-mini-black-holes-lhc-parallel.html"
 		],
 		"date": "2023-06-15T03:00:20Z",
-		"audio": false
+		"audio": "Hadronov-urychlova-nekontaktuje-ciz-vesmr----Pro-to-eme--1659---15--6--2023-e25su1b"
 	},
 	{
 		"id": "qXb37WXb07Y",
-		"title": "Konečně český výzkum o konspiračních teoriích! - Proč to řešíme? #1668",
+		"title": "Konečně český výzkum o konspiračních teoriích! - Proč to řešíme? #1658",
 		"description": [
 			"Zdroje/Inspirováno:",
 			"https://www.irozhlas.cz/neduvera"
 		],
 		"date": "2023-06-14T03:00:32Z",
-		"audio": false
+		"audio": "Konen-esk-vzkum-o-konspiranch-teorich----Pro-to-eme--1658---14--6--2023-e25stvl"
 	},
 	{
 		"id": "95NnG24KSY0",
@@ -197,7 +208,7 @@
 		"id": "ASm8SHhq8wg",
 		"title": "Jak si zničit reputaci? - Zpátky mimo téma #257",
 		"description": [],
-		"date": "2023-06-09T16:01:25Z",
+		"date": "2023-06-09T18:47:36Z",
 		"audio": false
 	},
 	{
@@ -10347,7 +10358,9 @@
 	{
 		"id": "TffAT6WNkHg",
 		"title": "Apatický mumifikář - Zvědátorský blok #4",
-		"description": [],
+		"description": [
+			"Originální pokec pochází z dílu #467 https://youtu.be/7KKasWRBMRc Napište nám do komentářů vaši oblíbenou scénu, kterou byste chtěli animovat a třeba se na ni dostane! :) Ideálně přidejte číslo dílu a přibližný čas."
+		],
 		"date": "2020-06-28T15:27:54Z",
 		"audio": false
 	},
@@ -10565,7 +10578,9 @@
 	{
 		"id": "wJbAl8N5DdU",
 		"title": "SpaceX sabotáž - Zvědátorský blok #3",
-		"description": [],
+		"description": [
+			"Originální pokec pochází z dílu #258 https://youtu.be/mIffPUPeLlg Napište nám do komentářů vaši oblíbenou scénu, kterou byste chtěli animovat a třeba se na ni dostane! :) Ideálně přidejte číslo dílu a přibližný čas."
+		],
 		"date": "2020-06-07T18:50:07Z",
 		"audio": false
 	},
@@ -10645,7 +10660,9 @@
 	{
 		"id": "iBnf-csEMO0",
 		"title": "Zvířecí potenciál - Zvědátorský blok #2",
-		"description": [],
+		"description": [
+			"Originální pokec pochází z dílu #19 https://youtu.be/Gr0hufry2pw Napište nám do komentářů vaši oblíbenou scénu, kterou byste chtěli animovat a třeba se na ni dostane! :) Ideálně přidejte číslo dílu a přibližný čas."
+		],
 		"date": "2020-05-31T17:03:23Z",
 		"audio": false
 	},
@@ -10731,7 +10748,9 @@
 	{
 		"id": "xt0kA8x56HI",
 		"title": "Kozy - Zvědátorský blok #1",
-		"description": [],
+		"description": [
+			"Doufáme, že tohle by mohl být náš další pravidelný segment, ale asi nemusíme vysvětlovat, že tvorba i takové jednoduché animace je náročnější než naše klasické video. Míříme tak na jedno video týdně, v horším případě jednou za dva týdny. Animaci způsobil Martin."
+		],
 		"date": "2020-05-24T11:00:18Z",
 		"audio": false
 	},
@@ -11056,7 +11075,7 @@
 			"https://path.dartmouth.edu/"
 		],
 		"date": "2020-04-21T03:00:03Z",
-		"audio": false
+		"audio": "Astronautv-prvodce-karantnou---Pro-to-eme--837---21--4--2020-e262qn6"
 	},
 	{
 		"id": "Hm3C3PxEJnk",
@@ -11068,7 +11087,7 @@
 			"https://www.reuters.com/article/us-health-coronavirus-southkorea/south-korea-reports-recovered-coronavirus-patients-testing-positive-again-idUSKCN21S15X"
 		],
 		"date": "2020-04-20T03:00:04Z",
-		"audio": false
+		"audio": "Mohou-koronaviry-napadnout-mozek----Pro-to-eme--836---20--4--2020-e262qj7"
 	},
 	{
 		"id": "ZLlgwHP1n-A",
@@ -11085,7 +11104,7 @@
 			"https://is.cuni.cz/webapps/zzp/detail/125517/"
 		],
 		"date": "2020-04-17T03:00:12Z",
-		"audio": false
+		"audio": "Kritizujeme-Patrikovu-bakalku---Pro-to-eme--835---17--4--2020-e262q57"
 	},
 	{
 		"id": "iHVthiLVPzQ",
