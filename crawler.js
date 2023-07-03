@@ -12,7 +12,7 @@ import { env_names, data_file, gitCommit } from "./common.js";
  * */
 
 $.api("", true)
-.version("0.1.0")
+.version("0.2.0")
 .describe([
 	"Pomocný script k uložení informací o YT videích na kanálu @Zvědátoři.",
 	"Data jsou uložena jako JSON v souboru: "+data_file,

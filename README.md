@@ -4,8 +4,8 @@ Klíčové informace na úvod:
 1. Mastodon účet: [Zvědátoři (neoficiální) (@Zvedatori@mastodonczech.cz) - MastodonCzech](https://mastodonczech.cz/@Zvedatori)
 
 ## Struktura projektu
-Repozitář se skládá ze tří utilitek pro příkazovou řádku a zatím jednoho konfiguračního
-souboru pro jejich automatizované spouštění.
+Repozitář se skládá ze tří utilitek pro příkazovou řádku a dvou konfiguračních
+souborů pro jejich automatizované spouštění.
 
 1. [`crawler.js`](./crawler.js) – pomocí [YouTube Data API](https://developers.google.com/youtube/v3)
 	přidá nová videa do souboru [`data.json`](./data.json)
@@ -23,6 +23,8 @@ souboru pro jejich automatizované spouštění.
 	pro [GitHub Action](https://docs.github.com/en/actions), který spustí `notifications`
 	utilitu cronem v ~17:53 hodin CET/CEST. A pátek navíc znovu zavolá `crawler` a `index` s parametrem pro
 	publikování jen pokud páteční stream.
+1. *[`podcast.js`](./podcast.js) – script páruje audio verze s již zaznamenanými videi, dále je*
+	*ke zvážení jak/zda tuto informaci zobrazovat (limit 500znaků + různě dlouhé zdroje)*
 
 ## TODO
 - [ ] [podcasty/audio verze](https://podcasters.spotify.com/pod/show/zvedatori)
@@ -30,6 +32,6 @@ souboru pro jejich automatizované spouštění.
 	- [ ] cron (kdy?)
 	- [ ] příspěvky max ~500 znaků (ok?)
 - [x] v cronu ošetřit letní/zimní čas https://github.com/orgs/community/discussions/13454
-- [x] (DONE + asi OK neřešit) páteční streamy + ~ošetřit (zkontrolovat ošetření) mimořádných událostí~
-- [x] (zdá se OK) zkontrolovat/ošetřit funkčnost komunity
+- [x] \(DONE + asi OK neřešit) páteční streamy + ~ošetřit (zkontrolovat ošetření) mimořádných událostí~
+- [x] \(zdá se OK) zkontrolovat/ošetřit funkčnost komunity
 - [ ] vylepšit strukturu/dokumentaci projektu
