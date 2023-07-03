@@ -21,14 +21,16 @@ $.api("", true)
 	"a tedy script se znovu nedotazuje na již zaznamenaná videa."
 ])
 .option("--token", "Youtube API token – povinný")
+.option("--force", "Vynutí stažení všech záznamů")
 .action(async function main({
-	token= $.env[env_names.youtube.token]
+	token= $.env[env_names.youtube.token],
+	force
 }){
 	if(!token) $.error(`Can't access YT API without a token, please use the '--token' option or enviroment variable '${env_names.youtube.token}'.`);
 	key= token;
 
 	const playlist= await fetchPlaylist(id);
-	const data= s.cat(data_file).xargs(JSON.parse);
+	const data= force ? [] : s.cat(data_file).xargs(JSON.parse);
 	const { id: limitID }= data[0] || {};
 	const data_tmp= [];
 	const todo= ()=> playlist.length - data.length - data_tmp.length;
@@ -39,7 +41,7 @@ $.api("", true)
 	}
 	echo("Videos collected");
 	s.echo(JSON.stringify(data_tmp.concat(data), null, "\t")).to(data_file);
-	gitCommit(data_file, "crawler");
+	if(!force) gitCommit(data_file, "crawler");
 	echo("Done");
 	$.exit(0);
 })
@@ -66,6 +68,9 @@ async function* fetchVideos({ id, length }){
 	}
 }
 function parseDescription(candidate){//TODO try better backup
+	if(candidate.includes("Originální pokec pochází z dílu")){
+		return [ candidate.slice(0, candidate.indexOf("\n")).trim() ];
+	}
 	if(candidate.includes("CO BY KDYBY")){
 		candidate= candidate.slice(candidate.lastIndexOf("\nCO BY KDYBY")+1);
 		return [ candidate.slice(0, candidate.indexOf("\n")).trim() ];
