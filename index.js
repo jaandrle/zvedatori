@@ -17,7 +17,7 @@ $.api("zvedatori")
 .describe([
 	"Tento script pomáhá s vybráním Zvědátorských¹ videí v playlistu.",
 	"",
-	"[1] https://www.youtube.com/@Zvedatori"
+	"[1] https://www.youtube.com/c/Zvedatori"
 ])
 .command("echo", "Jen vypíše video dle zadaného indexu", { default: true })
 	.option("--index, -I", "Pořadí od posledního k nejstaršímu. Indexuje se od 1, `0` = vyber náhodně.")

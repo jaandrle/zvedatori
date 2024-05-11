@@ -3,7 +3,7 @@
 //TODO
 import { env_names } from "./common.js";
 import { post } from './mastodon.js';
-const url_api= "https://www.youtube.com/@Zvedatori/community";
+const url_api= "https://www.youtube.com/c/Zvedatori/community";
 
 $.api("notifications")
 .version("0.1.0")
